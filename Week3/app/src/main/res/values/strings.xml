@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Week3</string>
+    <string name="mystring">Hello World!</string>
 </resources>
