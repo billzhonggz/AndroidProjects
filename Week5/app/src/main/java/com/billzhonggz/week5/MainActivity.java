@@ -4,7 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     // Initialize changing variable.
@@ -16,13 +18,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Set up text view.
-        final TextView t = (TextView)findViewById(R.id.textView);
+        final TextView t = (TextView) findViewById(R.id.textView);
         t.setText(Integer.toString(i));
 
         // Find out the buttons for increment in xml file.
-        Button add = (Button)findViewById(R.id.addBtn);
-        Button minor = (Button)findViewById(R.id.minorBtn);
-        Button reset = (Button)findViewById(R.id.resetBtn);
+        Button add = (Button) findViewById(R.id.addBtn);
+        Button minor = (Button) findViewById(R.id.minorBtn);
+        Button reset = (Button) findViewById(R.id.resetBtn);
         // Do add.
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +59,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Checkbox and toasts.
-        // Find
+        // Find the checkbox.
+        final CheckBox cb = (CheckBox) findViewById(R.id.checkBox);
+        cb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cb.isChecked()) {
+                    Toast.makeText(view.getContext(), "Checked!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(view.getContext(), "Unchecked!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }
