@@ -3,10 +3,7 @@ package com.billzhonggz.week5;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 
 public class MainActivity extends AppCompatActivity {
     // Initialize changing variable.
@@ -69,6 +66,21 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(view.getContext(), "Unchecked!", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        // TextEdit and toast.
+        final EditText name = (EditText) findViewById(R.id.name);
+        final EditText pwd = (EditText) findViewById(R.id.password);
+        final Button login = (Button) findViewById(R.id.loginBtn);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String n = name.getText().toString();
+                String p = pwd.getText().toString();
+                // Combine strings.
+                String combine = n + " - " + p;
+                Toast.makeText(view.getContext(),combine,Toast.LENGTH_SHORT).show();
             }
         });
     }
