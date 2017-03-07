@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Guessing Game</string>
+    <string name="plus_sign">+</string>
+    <string name="minor_sign">-</string>
+    <string name="make_a_guess">Make a guess:</string>
+    <string name="zero">0</string>
+    <string name="restart">Restart Game</string>
+</resources>
