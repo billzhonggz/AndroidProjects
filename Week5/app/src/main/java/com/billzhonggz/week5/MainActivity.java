@@ -1,5 +1,6 @@
 package com.billzhonggz.week5;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -81,6 +82,16 @@ public class MainActivity extends AppCompatActivity {
                 // Combine strings.
                 String combine = n + " - " + p;
                 Toast.makeText(view.getContext(),combine,Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Go to next activity.
+        Button next = (Button)findViewById(R.id.NextActivity);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(view.getContext(),SecondActivity.class);
+                startActivity(i);
             }
         });
     }
