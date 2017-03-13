@@ -113,21 +113,21 @@
             android:text="@string/minor_sign"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/minor_hundreds"
+            android:id="@+id/sub_hundreds"
             android:layout_weight="1"/>
 
         <Button
             android:text="@string/minor_sign"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/minor_tens"
+            android:id="@+id/sub_tens"
             android:layout_weight="1"/>
 
         <Button
             android:text="@string/minor_sign"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/minor_units"
+            android:id="@+id/sub_units"
             android:layout_weight="1"/>
     </LinearLayout>
 

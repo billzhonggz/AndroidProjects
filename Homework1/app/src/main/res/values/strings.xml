@@ -5,4 +5,7 @@
     <string name="make_a_guess">Make a guess:</string>
     <string name="zero">0</string>
     <string name="restart">Restart Game</string>
+    <string name="high">too high</string>
+    <string name="low">too low</string>
+    <string name="win">win!</string>
 </resources>
