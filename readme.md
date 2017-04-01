@@ -1,4 +1,4 @@
-#Android Projects
+# Android Projects
 * This is the course provided by BNU-HKBU United International College as a free elective course for every computer science student. 
 * This course will mainly talk about development in Android. 
 * This repo. is for daily programming assignments, exercise, and etc, but not final project.
