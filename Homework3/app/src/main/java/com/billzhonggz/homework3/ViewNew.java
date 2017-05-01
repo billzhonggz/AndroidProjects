@@ -23,6 +23,7 @@ public class ViewNew extends Button implements IModelListener {
         this.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+                // TODO: Bug fixes: ViewSnakes is null.
                 ViewSnakes viewSnakes = (ViewSnakes) findViewById(R.id.view_snakes);
                 c.newSnake(viewSnakes.getWidth(), viewSnakes.getHeight());
             }

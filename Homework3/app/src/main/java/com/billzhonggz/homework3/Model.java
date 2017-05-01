@@ -26,9 +26,8 @@ public class Model extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         // Create tables.
-        // TODO: Bug fixes on SQL statements.
-        sqLiteDatabase.execSQL("CREATE TABLE " + tableName1 + " (usual_id INTEGER PRIMARY KEY, SID INTEGER, R INTEGER, G INTEGER, B INTEGER");
-        sqLiteDatabase.execSQL("CREATE TABLE " + tableName2 + " (usual_id INTEGER PRIMARY KEY, SID INTEGER, X INTEGER, Y INTEGER");
+        sqLiteDatabase.execSQL("CREATE TABLE " + tableName1 + "(usual_id INTEGER PRIMARY KEY, SID INTEGER, R INTEGER, G INTEGER, B INTEGER);");
+        sqLiteDatabase.execSQL("CREATE TABLE " + tableName2 + "(usual_id INTEGER PRIMARY KEY, SID INTEGER, X INTEGER, Y INTEGER);");
     }
 
     @Override
