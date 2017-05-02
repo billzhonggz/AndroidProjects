@@ -6,8 +6,12 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * Created by ZHONG on 2017/4/30.
+ * Homework Assignment 3
+ * Mobile Application Development
+ * 1430003045 Junru Zhong (Bill)
+ * May 2nd, 2017
  */
+
 public class ViewSnakes extends View implements IModelListener{
     private Model m;
     private ControllerSnakes c;

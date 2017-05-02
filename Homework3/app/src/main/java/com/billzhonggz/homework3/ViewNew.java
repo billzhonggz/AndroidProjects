@@ -6,8 +6,12 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by ZHONG on 2017/4/30.
+ * Homework Assignment 3
+ * Mobile Application Development
+ * 1430003045 Junru Zhong (Bill)
+ * May 2nd, 2017
  */
+
 public class ViewNew extends Button implements IModelListener {
     private Model m;
     private ControllerNew c;
@@ -20,6 +24,9 @@ public class ViewNew extends Button implements IModelListener {
         this.m = m;
         this.c = c;
         m.addListener(this);
+
+        // Response to click.
+        // Add new snake by calling method in controller.
         this.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {

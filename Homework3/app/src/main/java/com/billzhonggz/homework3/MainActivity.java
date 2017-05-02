@@ -3,6 +3,13 @@ package com.billzhonggz.homework3;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+/**
+ * Homework Assignment 3
+ * Mobile Application Development
+ * 1430003045 Junru Zhong (Bill)
+ * May 2nd, 2017
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

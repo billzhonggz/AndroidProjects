@@ -1,8 +1,12 @@
 package com.billzhonggz.homework3;
 
 /**
- * Created by ZHONG on 2017/4/30.
+ * Homework Assignment 3
+ * Mobile Application Development
+ * 1430003045 Junru Zhong (Bill)
+ * May 2nd, 2017
  */
+
 public class ControllerSnakes {
     private Model m;
 

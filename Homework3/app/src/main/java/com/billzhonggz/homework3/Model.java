@@ -11,10 +11,15 @@ import android.graphics.Paint;
 import java.util.ArrayList;
 
 /**
- * Created by ZHONG on 2017/4/30.
+ * Homework Assignment 3
+ * Mobile Application Development
+ * 1430003045 Junru Zhong (Bill)
+ * May 2nd, 2017
  */
+
 public class Model extends SQLiteOpenHelper {
     private ArrayList<IModelListener> listeners;
+    // Identify table names.
     private String tableName1 = "SnakeData";
     private String tableName2 = "PointData";
 
@@ -69,12 +74,18 @@ public class Model extends SQLiteOpenHelper {
     }
 
     public synchronized void drawAll(Canvas canvas) {
+        // Initialize variables.
         int sid, r, g, b, x1, y1, x2, y2, count;
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.STROKE);
+        // Find a database.
         SQLiteDatabase rdb = this.getReadableDatabase();
+        // Initialize cursors.
         Cursor cursor1 = rdb.rawQuery("SELECT * FROM " + tableName1, null);
         Cursor cursor2 = null;
+
+        // Read cursor1 for snakes.
+        // For each snake, search points according to SID.
         while (cursor1.moveToNext()) {
             // Find snake id.
             sid = cursor1.getInt(cursor1.getColumnIndex("SID"));
@@ -84,11 +95,12 @@ public class Model extends SQLiteOpenHelper {
             b = cursor1.getInt(cursor1.getColumnIndex("B"));
             // Set color.
             paint.setColor(Color.rgb(r, g, b));
-            // Query all points.
+
+            // Query all points for each snake.
             cursor2 = rdb.rawQuery("SELECT * FROM " + tableName2 + " WHERE SID=" + sid, null);
             // Get the length of this query result.
             count = cursor2.getCount();
-            // Get the first point.
+            // Get the first point. If the cursor isn't null.
             if (cursor2.moveToFirst()) {
                 x1 = cursor2.getInt(cursor2.getColumnIndex("X"));
                 y1 = cursor2.getInt(cursor2.getColumnIndex("Y"));
@@ -105,6 +117,7 @@ public class Model extends SQLiteOpenHelper {
                 }
             }
         }
+        // Close database connection.
         if (cursor2 != null)
             cursor2.close();
         cursor1.close();
