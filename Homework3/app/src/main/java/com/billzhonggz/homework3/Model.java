@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class Model extends SQLiteOpenHelper {
     private ArrayList<IModelListener> listeners;
-    private String tableName1 = "SnakeTable";
+    private String tableName1 = "SnakeData";
     private String tableName2 = "PointData";
 
     public Model(Context context) {
@@ -35,24 +35,27 @@ public class Model extends SQLiteOpenHelper {
         // Nothing to do.
     }
 
-    public void addSnake(int sid, int r, int g, int b) {
+    public synchronized void addSnake(int sid, int r, int g, int b) {
         SQLiteDatabase wdb = this.getWritableDatabase();
         Object[] args = {sid, r, g, b};
         wdb.execSQL("INSERT INTO " + tableName1 + "(SID,R,G,B) VALUES (?,?,?,?)", args);
+        wdb.close();
         this.notifyAllModelListeners();
     }
 
-    public void addPoint(int sid, int x, int y) {
+    public synchronized void addPoint(int sid, int x, int y) {
         SQLiteDatabase wdb = this.getWritableDatabase();
         Object[] args = {sid, x, y};
         wdb.execSQL("INSERT INTO " + tableName2 + "(SID,X,Y) VALUES (?,?,?)", args);
+        wdb.close();
         this.notifyAllModelListeners();
     }
 
-    public void deleteLastPoint(int sid) {
+    public synchronized void deleteLastPoint(int sid) {
         SQLiteDatabase wdb = this.getWritableDatabase();
         wdb.execSQL("DELETE FROM " + tableName2 +
                 " WHERE _id=(SELECT MIN(_id) FROM " + tableName2 + " WHERE SID=" + sid + ");");
+        wdb.close();
         this.notifyAllModelListeners();
     }
 
@@ -65,12 +68,7 @@ public class Model extends SQLiteOpenHelper {
             listener.notifyModelListener();
     }
 
-    public void closeDB() {
-        SQLiteDatabase wdb = this.getWritableDatabase();
-        wdb.close();
-    }
-
-    public void drawAll(Canvas canvas) {
+    public synchronized void drawAll(Canvas canvas) {
         int sid, r, g, b, x1, y1, x2, y2, count;
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.STROKE);
@@ -110,5 +108,6 @@ public class Model extends SQLiteOpenHelper {
         if (cursor2 != null)
             cursor2.close();
         cursor1.close();
+        rdb.close();
     }
 }

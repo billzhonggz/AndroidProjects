@@ -15,7 +15,7 @@ public class ControllerNew {
 
     public void newSnake(int w, int h) {
         SnakeRunnable snakeRunnable = new SnakeRunnable(m, threads.size(), w, h);
-        Thread t1 = new Thread(snakeRunnable);
+        Thread t1 = new Thread(snakeRunnable, "t1");
         threads.add(t1);
         t1.start();
     }
