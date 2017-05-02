@@ -25,7 +25,7 @@ public class SnakeRunnable implements Runnable {
 
     @Override
     public void run() {
-        for (; ; ) {
+        while (true) {
             // Delete oldest point.
             m.deleteLastPoint(sid);
             // Add new point.

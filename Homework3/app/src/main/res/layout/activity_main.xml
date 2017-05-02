@@ -16,8 +16,7 @@
         android:id="@+id/view_snakes"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#808080"/>
+        android:layout_weight="1"/>
 
     <com.billzhonggz.homework3.ViewNew
         android:id="@+id/view_new"
