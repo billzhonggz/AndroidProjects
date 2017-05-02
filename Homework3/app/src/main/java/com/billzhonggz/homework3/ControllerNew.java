@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class ControllerNew {
     private Model m;
-    private ArrayList<Thread> threads;
+    private ArrayList<Thread> threads = new ArrayList<Thread>();
 
     public ControllerNew(Model m) {
         this.m = m;
